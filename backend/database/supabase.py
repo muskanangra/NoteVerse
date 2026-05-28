@@ -1,5 +1,6 @@
 import os
 import sqlite3
+# pyrefly: ignore [missing-import]
 import pg8000
 from dotenv import load_dotenv
 
