@@ -1,0 +1,147 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 440px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: var(--handdrawn-border);
+  border-radius: 24px;
+  padding: 40px 30px;
+  box-shadow: var(--paper-shadow);
+  z-index: 10;
+  position: relative;
+  text-align: center;
+}
+
+.auth-header {
+  margin-bottom: 30px;
+}
+
+.auth-logo {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--cherry-red);
+  margin-bottom: 8px;
+}
+
+.auth-subtitle {
+  font-size: 0.95rem;
+  color: var(--soft-berry);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.auth-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.auth-input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--dark-text);
+  padding-left: 4px;
+}
+
+.auth-input-wrapper {
+  position: relative;
+}
+
+.auth-input-wrapper input {
+  width: 100%;
+  padding: 12px 14px 12px 40px;
+  border: var(--handdrawn-border);
+  border-radius: 12px;
+  background-color: var(--cream);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  outline: none;
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.05);
+  transition: all 0.2s;
+}
+
+.auth-input-wrapper input:focus {
+  background-color: #FFF;
+  box-shadow: 0 0 0 3px var(--blush-pink);
+}
+
+.auth-input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--cherry-red);
+}
+
+.auth-error-message {
+  background-color: var(--peach);
+  border: 1px solid var(--cherry-red);
+  border-radius: 8px;
+  padding: 10px;
+  color: var(--soft-berry);
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.auth-submit-btn {
+  margin-top: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.auth-footer-text {
+  margin-top: 24px;
+  font-size: 0.9rem;
+}
+
+.auth-footer-text span {
+  color: var(--cherry-red);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.auth-footer-text span:hover {
+  color: var(--cherry-red-hover);
+}
+
+/* Layered Paper aesthetic details */
+.auth-paper-back {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: -5px;
+  bottom: -5px;
+  background-color: var(--blush-pink);
+  border: var(--handdrawn-border);
+  border-radius: 24px;
+  z-index: -1;
+}
+.auth-paper-back-2 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: -10px;
+  bottom: -10px;
+  background-color: var(--pastel-lavender);
+  border: var(--handdrawn-border);
+  border-radius: 24px;
+  z-index: -2;
+}

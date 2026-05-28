@@ -1,0 +1,290 @@
+.landing-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.aesthetic-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: var(--cream);
+  border-bottom: var(--handdrawn-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-serif);
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: var(--cherry-red);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark-text);
+  font-weight: 500;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.nav-links a:hover {
+  color: var(--cherry-red);
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 80px 10% 120px 10%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-badge {
+  background: var(--blush-pink);
+  border: var(--handdrawn-border);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  box-shadow: 2px 2px 0px var(--dark-text);
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 3.8rem;
+  line-height: 1.15;
+  color: var(--dark-text);
+  max-width: 800px;
+  margin-bottom: 24px;
+}
+
+.hero-title span {
+  color: var(--cherry-red);
+  position: relative;
+}
+
+.hero-description {
+  font-size: 1.15rem;
+  max-width: 600px;
+  margin-bottom: 40px;
+  color: #4A3A3D;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Features */
+.features-section {
+  background-color: var(--blush-pink);
+  border-top: var(--handdrawn-border);
+  border-bottom: var(--handdrawn-border);
+  padding: 80px 8%;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  color: var(--dark-text);
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: var(--soft-berry);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  background: var(--cream);
+  border: var(--handdrawn-border);
+  border-radius: 16px;
+  padding: 40px 30px;
+  box-shadow: var(--paper-shadow);
+  transition: transform 0.3s;
+  position: relative;
+}
+
+.feature-card:hover {
+  transform: var(--hover-lift);
+}
+
+.feature-icon-wrapper {
+  background: var(--peach);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  border: var(--handdrawn-border);
+  color: var(--cherry-red);
+}
+
+.feature-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+/* Testimonials */
+.testimonials-section {
+  padding: 100px 8%;
+  background: var(--cream);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.testimonial-card {
+  background: var(--cream);
+  border: var(--handdrawn-border);
+  border-radius: 12px;
+  padding: 30px;
+  position: relative;
+  box-shadow: var(--paper-shadow);
+}
+
+.testimonial-tape {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  background: rgba(253, 210, 225, 0.8);
+  border: 1px dashed rgba(45, 26, 30, 0.4);
+  padding: 4px 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--soft-berry);
+}
+
+.testimonial-card p {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--cherry-red);
+  background: var(--blush-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* CTA Footer banner */
+.cta-banner {
+  background: var(--cherry-red);
+  color: var(--cream);
+  text-align: center;
+  padding: 100px 10%;
+  position: relative;
+  border-top: var(--handdrawn-border);
+}
+
+.cta-banner h2 {
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-banner p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aesthetic-footer {
+  background: var(--dark-text);
+  color: var(--cream);
+  padding: 60px 8% 30px 8%;
+  border-top: var(--handdrawn-border);
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--blush-pink);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-socials a {
+  color: var(--blush-pink);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .aesthetic-nav {
+    padding: 15px 4%;
+  }
+  .nav-links {
+    gap: 15px;
+  }
+  .cta-banner h2 {
+    font-size: 2.2rem;
+  }
+}
