@@ -1106,15 +1106,140 @@
     linear-gradient(to bottom, rgba(0,0,0,0.02) 1px, transparent 1px);
 }
 
-/* Enforce black text color inside all scrapbook cards and the personalization panel under all themes */
+/* Enforce high-contrast dark text inside all scrapbook cards, note cards, and personalization panel */
 .scrapbook-widget-card,
 .personalization-drawer,
+.note-card,
 .scrapbook-widget-card select,
 .personalization-drawer select,
 .scrapbook-widget-card label,
-.personalization-drawer label {
-  color: #000000 !important;
+.personalization-drawer label,
+.note-card .note-title,
+.note-card .note-content,
+.note-card .note-action-btn,
+.note-card .note-footer {
+  color: #1E0F12 !important; /* Espresso black for light surfaces */
 }
+
+/* Sub-elements of light surface cards */
+.note-card .note-content {
+  color: rgba(30, 15, 18, 0.9) !important;
+  font-weight: 450;
+  text-shadow: 0.2px 0.2px 0px rgba(255, 255, 255, 0.5); /* Boost separation */
+}
+
+.note-card .note-footer {
+  color: rgba(30, 15, 18, 0.65) !important;
+  border-top: 1.5px dashed rgba(30, 15, 18, 0.2) !important;
+  font-weight: 500;
+}
+
+/* Mood filter pills and tag pills */
+.tag-pill {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1.5px solid var(--theme-border-color) !important;
+  background: #ffffff !important;
+  color: #1E0F12 !important;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 2px 2px 0px var(--theme-border-color);
+  transition: all 0.15s;
+}
+
+.tag-pill:hover, .tag-pill.active {
+  background: var(--theme-primary) !important;
+  color: #FFFFFF !important;
+  border-color: var(--theme-primary) !important;
+  box-shadow: 2px 2px 0px var(--theme-dark) !important;
+}
+
+/* Note tags */
+.note-tag {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(30, 15, 18, 0.25) !important;
+  color: #1E0F12 !important;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: 1px 1px 0px rgba(30, 15, 18, 0.1);
+}
+
+/* Translucent Glassmorphism Modals Readability */
+.modal-content {
+  background: rgba(255, 253, 249, 0.94) !important; /* Higher opacity to prevent background bleeding */
+  backdrop-filter: blur(28px) saturate(130%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(130%) !important;
+  border: 2px solid var(--theme-border-color) !important;
+  color: #1E0F12 !important;
+  box-shadow: 0 12px 45px rgba(0, 0, 0, 0.25), 4px 4px 0px var(--theme-border-color) !important;
+}
+
+.modal-content .modal-header h3 {
+  color: var(--theme-primary) !important;
+  font-weight: bold;
+}
+
+.form-group label {
+  color: #1E0F12 !important;
+  font-weight: 600;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+  background-color: #ffffff !important;
+  color: #1E0F12 !important;
+  border: 1.5px solid var(--theme-border-color) !important;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.form-group input::placeholder, .form-group textarea::placeholder {
+  color: rgba(30, 15, 18, 0.55) !important;
+}
+
+/* Sidebar Accessibility across Dark & Light Atmospheres */
+.sidebar {
+  background-color: var(--theme-bg) !important;
+  border-right: 2px solid var(--theme-border-color) !important;
+}
+
+.sidebar-item {
+  color: var(--theme-dark) !important;
+  font-weight: 600;
+}
+
+.sidebar-item:hover, .sidebar-item.active {
+  background-color: var(--theme-accent) !important;
+  color: var(--theme-dark) !important;
+  border: 1.5px solid var(--theme-border-color) !important;
+}
+
+.sky-twilight .sidebar, .sky-moonlight .sidebar {
+  background-color: rgba(30, 15, 18, 0.96) !important;
+  border-right: 2px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.sky-twilight .sidebar-item, .sky-moonlight .sidebar-item {
+  color: #FAF4EF !important;
+}
+
+.sky-twilight .sidebar-item:hover, .sky-twilight .sidebar-item.active,
+.sky-moonlight .sidebar-item:hover, .sky-moonlight .sidebar-item.active {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #FFFDF9 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+.sky-twilight .profile-info h4, .sky-moonlight .profile-info h4 {
+  color: #FAF4EF !important;
+}
+
+.sky-twilight .logout-btn, .sky-moonlight .logout-btn {
+  color: var(--theme-primary) !important;
+}
+
 
 /* Custom Turntable Deck & Cherry Vinyl styles (Enlarged & Horizontal Layout Support) */
 .horizontal-music-corner {

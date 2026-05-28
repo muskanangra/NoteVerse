@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap');
 
 :root {
+  /* Mapping legacy/static variable names to dynamic theme variables */
+  --cherry-red: var(--theme-primary);
+  --cherry-red-hover: var(--theme-primary-hover);
+  --blush-pink: var(--theme-accent);
+  --cream: var(--theme-bg);
+  --dark-text: var(--theme-dark);
+  --soft-berry: #8B5E66;
+  --peach: var(--theme-accent-light);
+
   /* Dynamic Theme Variables - default to Cherry Cream */
   --theme-bg: #FFFDF9;
   --theme-primary: #D23B4C;
@@ -15,7 +24,7 @@
   --font-sans: 'Outfit', 'Poppins', sans-serif;
   
   /* Borders and Shadow dynamic bindings */
-  --handdrawn-border: 1px solid color-mix(in srgb, var(--theme-border-color) 35%, transparent);
+  --handdrawn-border: 1.5px solid color-mix(in srgb, var(--theme-border-color) 45%, transparent);
   --paper-shadow: 4px 4px 12px rgba(78, 59, 62, 0.12), 1px 2px 4px rgba(78, 59, 62, 0.06);
   --sticker-shadow: 0 4px 10px rgba(78, 59, 62, 0.1);
   --hover-lift: translateY(-5px) rotate(-1deg);
@@ -75,10 +84,10 @@
 .theme-cozy-twilight {
   --theme-bg: #2D1A1E;
   --theme-primary: #CD6A7C;
-  --theme-primary-hover: #B15465;
+  --theme-primary-hover: #E08595;
   --theme-accent: #3D2228;
   --theme-accent-light: #4E3B3E;
-  --theme-dark: #2D1A1E;
+  --theme-dark: #FAF4EF; /* Highly readable warm ivory for dark background */
   --theme-border-color: #CD6A7C;
 }
 
