@@ -9,6 +9,9 @@ load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
+import json
+import uuid
+
 class PostgresCursorWrapper:
     def __init__(self, cursor):
         self.cursor = cursor
@@ -17,16 +20,42 @@ class PostgresCursorWrapper:
         # Convert SQLite style placeholder '?' to Postgres style '%s'
         sql = sql.replace('?', '%s')
         if params is not None:
-            # pg8000 expects params list
-            self.cursor.execute(sql, list(params))
+            # If any parameter is a JSON string representing a list (e.g. tags),
+            # convert it to a python list so pg8000 inserts it as a Postgres array.
+            new_params = []
+            for p in params:
+                if isinstance(p, str) and p.startswith('[') and p.endswith(']'):
+                    try:
+                        parsed = json.loads(p)
+                        if isinstance(parsed, list):
+                            p = parsed
+                    except Exception:
+                        pass
+                new_params.append(p)
+            self.cursor.execute(sql, list(new_params))
         else:
             self.cursor.execute(sql)
             
+    def _convert_row(self, row):
+        if row is None:
+            return None
+        new_row = []
+        for val in row:
+            if isinstance(val, uuid.UUID):
+                new_row.append(str(val))
+            elif isinstance(val, list):
+                new_row.append(json.dumps(val))
+            else:
+                new_row.append(val)
+        return tuple(new_row)
+
     def fetchall(self):
-        return self.cursor.fetchall()
+        rows = self.cursor.fetchall()
+        return [self._convert_row(row) for row in rows]
         
     def fetchone(self):
-        return self.cursor.fetchone()
+        row = self.cursor.fetchone()
+        return self._convert_row(row)
         
     def close(self):
         self.cursor.close()
