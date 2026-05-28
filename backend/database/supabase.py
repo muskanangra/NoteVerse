@@ -11,6 +11,7 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 
 import json
 import uuid
+import datetime
 
 class PostgresCursorWrapper:
     def __init__(self, cursor):
@@ -45,6 +46,8 @@ class PostgresCursorWrapper:
                 new_row.append(str(val))
             elif isinstance(val, list):
                 new_row.append(json.dumps(val))
+            elif isinstance(val, (datetime.datetime, datetime.date)):
+                new_row.append(val.isoformat())
             else:
                 new_row.append(val)
         return tuple(new_row)
